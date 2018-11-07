@@ -68,22 +68,38 @@
                 $.ajax({
                     url: queryURL,
                     method: "GET"
-                    }).then(function(response) {
+                }).then(function(response) {
 
-                        var animalSpan = $("<span>");
+                    var animalSpan = $("<span>");
 
-                        // var title = response.data.title;
-                        // var titlePlace = $("<p>").text("Title: " + title);
+                    // var title = response.data.title;
+                    // var titlePlace = $("<p>").text("Title: " + title);
 
-                        var imgStill = response.data.images.fixed_height_still.url;
-                        var imgAnimate = response.data.images.fixed_height.url;
+                    var imgStill = response.data.images.fixed_height_still.url;
+                    var imgAnimate = response.data.images.fixed_height.url;
 
-                        var imgPlace = $("<img src= '" + imgStill + " data-still='" + imgStill + "' data-animate='" + imgAnimate + "'data-state='still' class='animal-gif'>");
+                    var imgPlace = $("<img src= '" + imgStill + "' data-still='" + imgStill + "' data-animate='" + imgAnimate + "' data-state='still' class='animal-gif'>");
 
-                        // animalDiv.append(titlePlace);
-                        animalSpan.append(imgPlace);
+                    // animalDiv.append(titlePlace);
+                    animalSpan.append(imgPlace);
 
-                        $("#animals-view").prepend(animalSpan);
+                    $("#animals-view").prepend(animalSpan);
+
+                    $(".animal-gif").on("click", function() {
+
+                        console.log($(this).attr("data-state"));
+
+                        var state = $(this).attr("data-state");
+
+                        if (state === "still") {
+                            $(this).attr("src", $(this).attr("data-animate"));
+                            $(this).attr("data-state", "animate");
+                        } 
+                        else {
+                            $(this).attr("src", $(this).attr("data-still"));
+                            $(this).attr("data-state", "still");
+                        }
+                    });
                 });
 
             }
@@ -115,24 +131,6 @@
                 animals.push(animal);
 
                 renderButtons();
-            });
-
-            $(".animal-gif").on("click", function() {
-                // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-
-                console.log($(this).attr("data-state"));
-
-                var state = $(this).attr("data-state");
-                // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-                // Then, set the image's data-state to animate
-                // Else set src to the data-still value
-                if (state === "still") {
-                    $(this).attr("src", $(this).attr("data-animate"));
-                    $(this).attr("data-state", "animate");
-                } else {
-                    $(this).attr("src", $(this).attr("data-still"));
-                    $(this).attr("data-state", "still");
-                }
             });
 
             $(document).on("click", ".animal-btn", displayGif);
