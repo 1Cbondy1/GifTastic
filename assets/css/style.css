@@ -5,13 +5,20 @@
     border-radius: 6px;
 }
 
+header {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    margin: 0px;
+    border-bottom: lightgrey solid 3px;
+}
+
 body {
     background: linear-gradient(#35BEC4, #276C9F);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
-    margin: 10px;
 }
 
 .container {
@@ -47,4 +54,11 @@ body {
 #animal-input {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#placeholder {
+    vertical-align: middle;
+    margin-top: 10px;
+    padding: 150px;
+    border: lightgrey solid 3px;
 }

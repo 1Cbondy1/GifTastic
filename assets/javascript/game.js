@@ -29,9 +29,8 @@ function displayGif() {
         // prepending span containing selected gif to the beggining of the animals-view div
         $("#animals-view").prepend(animalSpan);
 
+        // on click function switching between still and animated gifs
         $(".animal-gif").on("click", function() {
-
-            console.log($(this).attr("data-state"));
 
             var state = $(this).attr("data-state");
 
@@ -45,38 +44,35 @@ function displayGif() {
             }
         });
     });
-
 }
 
+// function that renders the new animal buttons
 function renderButtons() {
 
+    // clears the value of the animal-buttons id 
     $("#added-buttons").empty();
 
+    // for loop that creates a button, adds animal-btn class and name to each, and appends to the id added-buttons at the top of the page
     for (var i = 0; i < animals.length; i++) {
-
         var a = $("<button>");
-
         a.addClass("animal-btn");
-
         a.attr("data-name", animals[i]);
-
         a.text(animals[i]);
-
         $("#added-buttons").append(a);
     }
 }
 
+// function that adds the input animal into the animals array
 $("#add-animal").on("click", function(event) {
-
     event.preventDefault();
 
     var animal = $("#animal-input").val().trim();
-
     animals.push(animal);
-
     renderButtons();
 });
 
+// runs the displayGif function when the document is clicked
 $(document).on("click", ".animal-btn", displayGif);
 
+// runs the renderButtons function
 renderButtons();
