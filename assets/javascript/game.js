@@ -1,5 +1,5 @@
 // Initial array of animals
-var animals = ["Reindeer", "Artic Fox", "Puffin", "Icelandic Horse"];
+var animals = ["Bear", "Puffin", "Ferret", "Wolf", "Falcon", "Elephant"];
 
 // displayGif function re-renders the HTML to display the appropriate content
 function displayGif() {
@@ -16,17 +16,17 @@ function displayGif() {
 
         var animalSpan = $("<span>");
 
-        // var title = response.data.title;
-        // var titlePlace = $("<p>").text("Title: " + title);
-
+        // defining variables for still and animated versions of the gif that has been selected
         var imgStill = response.data.images.fixed_height_still.url;
         var imgAnimate = response.data.images.fixed_height.url;
 
+        // creating a img tag in the html DOM to place the gif links into
         var imgPlace = $("<img src= '" + imgStill + "' data-still='" + imgStill + "' data-animate='" + imgAnimate + "' data-state='still' class='animal-gif'>");
 
-        // animalDiv.append(titlePlace);
+        // appending selected gif to the span
         animalSpan.append(imgPlace);
 
+        // prepending span containing selected gif to the beggining of the animals-view div
         $("#animals-view").prepend(animalSpan);
 
         $(".animal-gif").on("click", function() {
@@ -39,7 +39,7 @@ function displayGif() {
                 $(this).attr("src", $(this).attr("data-animate"));
                 $(this).attr("data-state", "animate");
             } 
-            else {
+            else if (state === "animate") {
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }

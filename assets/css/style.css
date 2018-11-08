@@ -1,3 +1,50 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    margin: auto;
+    border-radius: 6px;
+}
+
+body {
+    background: linear-gradient(#35BEC4, #276C9F);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    margin: 10px;
+}
+
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 1080px;
+}
+
 .animal-gif {
     margin: 10px;
+}
+
+#added-buttons {
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.animal-btn {
+    margin: 0px 5px 5px 0px;
+    background: white;
+    border: lightgrey solid 1px;
+    border-radius: 6px;
+}
+
+#add-animal {
+    margin-bottom: 10px;
+    background: white;
+    border: lightgrey solid 1px;
+    border-radius: 6px;
+}
+
+#animal-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

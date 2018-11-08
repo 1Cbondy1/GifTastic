@@ -8,8 +8,11 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- link to reset css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
     <!-- link to css -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
     <!-- link to jQuery CDN file -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -19,6 +22,7 @@
 
     <!-- link to bootstrap CDNs -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </head>
@@ -27,27 +31,37 @@
 
     <div class="container">
         
-        <!-- rendered buttons will get dumped Here  -->
-        <div id="added-buttons"></div>
-
-        <form id="animal-form">
-            <label for="animal-input">Add another animal!</label>
-            <input type="text" id="animal-input">
+        <div class="row">
             
-            <br>
+            <!-- rendered buttons will get dumped Here  -->
+            <div id="added-buttons"></div>
 
-            <!-- button triggers new animal to be added -->
-            <input id="add-animal" type="submit" value="Add another animal!">
-        </form>
+        </div>
 
-        <!-- animals will Get Dumped Here -->
-        <div id="animals-view"></div>
+        <div class="row">
+            <div class="col-md-3">
+                <form id="animal-form">
+                    <label for="animal-input"></label>
+                    <input type="text" id="animal-input">
+                    
+                    <br>
+
+                    <!-- button triggers new animal to be added -->
+                    <input id="add-animal" type="submit" value="Add another animal!">
+                </form>
+            </div>
+
+            <div class="col-md-9">
+                <!-- animals will Get Dumped Here -->
+                <div id="animals-view"></div>
+            </div>
+
+        </div>
 
         <!-- link to external javaScript file -->
         <script type="text/javascript" src = "assets/javascript/game.js"></script>
 
     </div>
-
     
 </body>
 
