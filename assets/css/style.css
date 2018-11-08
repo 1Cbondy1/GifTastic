@@ -7,10 +7,12 @@
 
 header {
     background: white;
+    font-family: 'Pattaya', sans-serif;
     padding: 20px;
     width: 100%;
     margin: 0px;
-    border-bottom: lightgrey solid 3px;
+    box-shadow: 2px 2px 5px rgb(36, 36, 36);
+
 }
 
 body {
@@ -25,6 +27,11 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     max-width: 1080px;
+}
+
+#vert-line {
+    border-radius: 0px;
+    border-right: lightgrey solid 1px;
 }
 
 .animal-gif {
@@ -42,6 +49,12 @@ body {
     background: white;
     border: lightgrey solid 1px;
     border-radius: 6px;
+    box-shadow: 2px 2px 5px rgb(36, 36, 36);
+}
+
+#animal-input {
+    margin: 0px 0px 0px -5px;
+    width: 162px;
 }
 
 #add-animal {
@@ -49,6 +62,7 @@ body {
     background: white;
     border: lightgrey solid 1px;
     border-radius: 6px;
+    box-shadow: 2px 2px 5px rgb(36, 36, 36);
 }
 
 #animal-input {
@@ -56,9 +70,7 @@ body {
     margin-bottom: 10px;
 }
 
-#placeholder {
-    vertical-align: middle;
-    margin-top: 10px;
-    padding: 150px;
-    border: lightgrey solid 3px;
+#animal-form {
+    margin: 0px;
+    text-align: left;
 }
